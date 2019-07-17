@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Abe's Coffee Blog</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="../css/main.css">
+      <script src="https://kit.fontawesome.com/a6e87818b4.js"></script>
+  </head>
+  <body>
+
+    <div class="head">
+      <video autoplay muted loop id="myVideo">
+        <source src="../img/coffee.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="innerHead">
+        <div class="innerHeadText">
+          <h1>
+            <span id="a">A</span>
+            <span id="b">B</span>
+            <span id="r">R</span>
+            <span id="a2">A</span>
+            <span id="h">H</span>
+            <span id="a3">A</span>
+            <span id="m">M</span>
+          </h1>
+          <h3>The <span><i>Self-Proclaimed</i></span> Best Blogger</h3>
+          <a href="/blogs">Check Out The Blogs <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about">
+      <h2>Projects</h2>
+      <hr>
+      <div class="content">
+        <div class="divInContent" id="typeWriter">
+          <a href="https://codepen.io/Moreno_Abraham/pen/eovQvw" target="_blank">
+            <div class="invisible divInDiv" id="divInDiv">
+              <p>Typewriter</p>
+            </div>
+          </a>
+        </div>
+        <div class="divInContent" id="leaderBoard">
+          <a href="https://slapsgame.herokuapp.com/" target="_blank">
+            <div class="invisible divInDiv" id="divInDiv2">
+              <p>Leaderboard</p>
+            </div>
+          </a>
+        </div>
+        <div class="divInContent" id="school">
+          <a href="https://cristoreysite.herokuapp.com/login" target="_blank">
+            <div class="invisible divInDiv" id="divInDiv3">
+              <p>School App</p>
+            </div>
+          </a>
+        </div>
+        {% if mainArr|length > 0 %}
+          {% for i in mainArr %}
+            <div class="divInContent" style="background: url('{{i.imgUrl}}');
+                                            background-size: cover;
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            margin-top: 10px;">
+              <a href="{{i.link}}" target="_blank">
+                <div class="invisible divInDiv" id="divInDivNew{{i}}">
+                  <p>{{i.name}}</p>
+                </div>
+              </a>
+            </div>
+
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="iconHolder">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/abemorenosjourney/"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/MiNombreEsAbe"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+
+    <script src="../js/index.js" type="text/javascript"></script>
+  </body>
+</html>
